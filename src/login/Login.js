@@ -7,19 +7,28 @@ import { Container, Content, Form, Input, Item } from 'native-base';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 export default class Login extends Component {
-
-
-    constructor(props){
-      super(props);
-      this.state = {
-        user : '',
-        pass : ''
-      }
-    }
+    // constructor(props){
+    //   super(props);
+    //   this.state = {
+    //     user : '',
+    //     pass : ''
+    //   }
+    // }
 
     _handlePress() {
         console.log(this.state.user);
         console.log(this.state.pass);
+
+        Alert.alert(
+          'Alert Title',
+          this.state.user,
+          [
+            {text: 'Ask me later', onPress: () => console.log('Ask me later pressed')},
+            {text: 'Cancel', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+            {text: 'OK', onPress: () => console.log('OK Pressed')},
+          ],
+          { cancelable: false }
+        )
      }
 
     render() {
@@ -50,7 +59,7 @@ export default class Login extends Component {
                                              />
                                         </Item>
                                         <View style={styles.box}>
-                                          
+
                                           <Button
                                             style={styles.buttonContainer}
                                             onPress={() => this._handlePress()}

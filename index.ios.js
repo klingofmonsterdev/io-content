@@ -13,11 +13,12 @@ import {
 } from 'react-native';
 
 import Login from './src/login/Login';
+import Content from './src/content/Content';
 
 export default class react_v1 extends Component {
   render() {
     return (
-      <Login />
+      <Content />
     );
   }
 }
