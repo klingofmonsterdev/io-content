@@ -6,40 +6,9 @@
 
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
+  AppRegistry
 } from 'react-native';
 
-import Login from './src/login/Login';
-import Content from './src/content/Content';
+import App from './src/App';
 
-export default class react_v1 extends Component {
-  render() {
-    return (
-      <Content />
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
-
-AppRegistry.registerComponent('react_v1', () => react_v1);
+AppRegistry.registerComponent('react_v1', () => App);

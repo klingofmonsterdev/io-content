@@ -1,9 +1,10 @@
 import React ,{Component} from 'react';
 import {ScrollView,Text} from 'react-native';
 import axios from 'axios';
-import ContentBanner from './ContentBanner';
-import ContentDetail from './ContentDetail';
-
+import firebase from 'firebase';
+import ContentBanner from './content/ContentBanner';
+import ContentDetail from './content/ContentDetail';
+import { Button, CardSection} from './common';
 
 export default class Content extends Component {
   state = { albums: [] }
@@ -22,12 +23,12 @@ export default class Content extends Component {
   }
 
   render(){
-
-    console.log(this.state);
-
     return(
       <ScrollView>
         <ContentBanner />
+        <CardSection>
+          <Button textBtn = "Log Out" onPress={() => firebase.auth().signOut()} />
+        </CardSection>
         {this.renderAlbums()}
       </ScrollView>
     );
